@@ -1,0 +1,29 @@
+<h2>Inscripción de Cursos</h2>
+<form>
+  <label for="numeroCurso">Número del Curso:</label>
+  <input type="text" id="numeroCurso" name="numeroCurso" [(ngModel)]="numeroCurso">
+  <button type="button" (click)="getCurso()">Buscar</button><br><br>
+
+  <div>
+    <h3>Información</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Cédula</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Fecha Inscripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let inscripcion of inscripciones;">
+          <td>{{inscripcion.cedula_alumno}}</td>
+          <td>{{inscripcion.nombre_alumno }}</td>
+          <td>{{inscripcion.apellido_alumno }}</td>
+          <td>{{inscripcion.fecha_inscripcion }}</td>
+          <td><!--  --></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</form>
